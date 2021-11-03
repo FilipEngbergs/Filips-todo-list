@@ -18,13 +18,26 @@ body header {
   font-size: 1.2rem;
   font-family: "Russo One", sans-serif;
 }
+@media screen and (min-width: 768px) {
+  body header {
+    height: 250px;
+    font-size: 2rem;
+  }
+}
 body main {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   gap: 10px;
-  height: 400px;
+  height: 600px;
+}
+@media screen and (min-width: 768px) {
+  body main {
+    flex-direction: row;
+    align-items: flex-start;
+    height: 600px;
+  }
 }
 body main form {
   display: flex;

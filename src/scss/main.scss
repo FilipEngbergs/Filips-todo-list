@@ -22,6 +22,10 @@ body {
         color: rgba($color: variables.$third-color, $alpha: 0.858);
         font-size: 1.2rem;
         font-family: "Russo One", sans-serif;
+        @include mixins.tablet {
+            height: 250px;
+            font-size: 2rem;
+        }
     }
     main {
         display: flex;
@@ -29,7 +33,12 @@ body {
         align-items: center;
         flex-direction: column;
         gap: 10px;
-        height: 400px;
+        height: 600px;
+        @include mixins.tablet {
+            flex-direction: row;
+            align-items: flex-start;
+            height: 600px;
+        }
         form {
             display: flex;
             justify-content: center;
