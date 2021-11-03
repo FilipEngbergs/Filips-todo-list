@@ -18,6 +18,7 @@ window.onload = function () {
         "Gå promenad"
     );
     let makeListButton = document.createElement("button");
+    makeListButton.className = "create-list-button";
     makeListButton.innerHTML = "Create List";
     let myForm = document.querySelector("form");
     //EventListener
