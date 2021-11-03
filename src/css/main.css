@@ -24,6 +24,12 @@ body header {
     font-size: 2rem;
   }
 }
+@media screen and (min-width: 992px) {
+  body header {
+    height: 300px;
+    font-size: 2.5rem;
+  }
+}
 body main {
   display: flex;
   justify-content: flex-start;
@@ -36,7 +42,6 @@ body main {
   body main {
     flex-direction: row;
     align-items: flex-start;
-    height: 600px;
   }
 }
 body main form {
@@ -50,10 +55,20 @@ body main form .todo-input {
   border: 1px solid black;
   font-size: 1.2rem;
 }
+@media screen and (min-width: 992px) {
+  body main form .todo-input {
+    width: 40%;
+  }
+}
 body main form .submit-input-button {
   width: 20%;
   background: radial-gradient(white, #ff8a3b);
   border: 1px solid black;
+}
+@media screen and (min-width: 992px) {
+  body main form .submit-input-button {
+    width: 10%;
+  }
 }
 body main form .submit-input-button i {
   font-size: 2rem;
