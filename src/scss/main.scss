@@ -1,1 +1,62 @@
 @use "mixins";
+@use "variables";
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    font-size: 12pt;
+    background: linear-gradient(
+        120deg,
+        variables.$primary-color,
+        variables.$secondery-color
+    );
+    background-repeat: no-repeat;
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        color: rgba($color: variables.$third-color, $alpha: 0.858);
+        font-size: 1.2rem;
+        font-family: "Russo One", sans-serif;
+    }
+    main {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        height: 400px;
+        form {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            .todo-input {
+                width: 70%;
+                height: 40px;
+                border: 1px solid black;
+                font-size: 1.2rem;
+            }
+            .submit-input-button {
+                width: 20%;
+                background: radial-gradient(
+                    variables.$white-color,
+                    variables.$fourth-color
+                );
+                border: 1px solid black;
+                i {
+                    font-size: 2rem;
+                    color: variables.$third-color;
+                }
+            }
+        }
+        .todo-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-size: 12pt;
+  background: linear-gradient(120deg, #ffce99, #ffe6cc);
+  background-repeat: no-repeat;
+}
+body header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: rgba(255, 159, 57, 0.858);
+  font-size: 1.2rem;
+  font-family: "Russo One", sans-serif;
+}
+body main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  height: 400px;
+}
+body main form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+body main form .todo-input {
+  width: 70%;
+  height: 40px;
+  border: 1px solid black;
+  font-size: 1.2rem;
+}
+body main form .submit-input-button {
+  width: 20%;
+  background: radial-gradient(white, #ff8a3b);
+  border: 1px solid black;
+}
+body main form .submit-input-button i {
+  font-size: 2rem;
+  color: #ff9f39;
+}
+body main .todo-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
