@@ -70,6 +70,13 @@ body {
                     color: variables.$third-color;
                 }
             }
+            .create-list-button {
+                width: 10%;
+                background: radial-gradient(
+                    variables.$white-color,
+                    variables.$fourth-color
+                );
+            }
         }
         .todo-container {
             display: flex;
