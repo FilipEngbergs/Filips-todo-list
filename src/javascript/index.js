@@ -40,11 +40,11 @@ function makeMyListFunction() {
     ];
 
     function remove(position) {
-        myArray.splice(position, 1);
         console.log(position);
         document
-            .querySelectorAll(`.output-box:nth-of-type(${position})`)
+            .querySelectorAll(`.output-box:nth-of-type(${position + 1})`)
             .forEach((x) => x.remove());
+        myArray.splice(position, 1);
     }
     function submit(position) {}
 
