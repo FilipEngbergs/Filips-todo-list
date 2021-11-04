@@ -74,8 +74,48 @@ body main form .submit-input-button i {
   font-size: 2rem;
   color: #ff9f39;
 }
+body main form .create-list-button {
+  width: 10%;
+  background: radial-gradient(white, #ff8a3b);
+}
 body main .todo-container {
   display: flex;
-  justify-content: center;
+  align-items: center;
   width: 100%;
+  gap: 10px;
+  flex-direction: column;
+}
+body main .todo-container .output-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  width: 70%;
+  height: 40px;
+  border: 1px solid black;
+  font-size: 1.2rem;
+}
+body main .todo-container .button-box {
+  width: 30%;
+}
+body main .todo-container .button-box .submit-output-button {
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(white, #ff8a3b);
+  border: 1px solid black;
+}
+body main .todo-container .button-box .submit-output-button i {
+  font-size: 2.2rem;
+  color: green;
+}
+body main .todo-container .button-box .delete-output-button {
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(white, #ff8a3b);
+  border: 1px solid black;
+}
+body main .todo-container .button-box .delete-output-button i {
+  font-size: 2.2rem;
+  color: black;
 }
