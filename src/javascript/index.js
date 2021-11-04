@@ -30,6 +30,7 @@ function makeMyListFunction() {
         "Borsta tänderna",
         "Gå promenad"
     );
+
     let myArray = [
         myList.todo1,
         myList.todo2,
@@ -37,6 +38,15 @@ function makeMyListFunction() {
         myList.todo4,
         myList.todo5,
     ];
+
+    function remove(position) {
+        myArray.splice(position, 1);
+        console.log(position);
+        document
+            .querySelectorAll(`.output-box:nth-of-type(${position})`)
+            .forEach((x) => x.remove());
+    }
+    function submit(position) {}
 
     for (let i = 0; i < myArray.length; i++) {
         let objektDiv = document.createElement("div");
@@ -48,9 +58,14 @@ function makeMyListFunction() {
         let deleteButton = document.createElement("button");
         let deleteIcon = document.createElement("i");
 
-        submitButton.addEventListener("click", submitListFunction);
-        submitButton.style.cursor = "pointer";
-        deleteButton.addEventListener("click", deleteListFunction);
+        submitButton.addEventListener("click", () => {
+            submit(i);
+        });
+
+        deleteButton.addEventListener("click", () => {
+            remove(i);
+        });
+
         deleteButton.style.cursor = "pointer";
         objektDiv.className = "output-box";
         objektP.innerHTML = myArray[i];
@@ -71,10 +86,10 @@ function makeMyListFunction() {
         buttonContainer.appendChild(deleteButton);
         deleteButton.appendChild(deleteIcon);
     }
-}
-function submitListFunction() {
-    console.log("submit");
-}
-function deleteListFunction() {
-    console.log("delete");
+    function submitListFunction() {
+        console.log("submit");
+    }
+    function deleteListFunction() {
+        console.log("delete");
+    }
 }
