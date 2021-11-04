@@ -76,6 +76,6 @@ body main form .submit-input-button i {
 }
 body main .todo-container {
   display: flex;
-  justify-content: center;
+  align-items: center;
   width: 100%;
 }

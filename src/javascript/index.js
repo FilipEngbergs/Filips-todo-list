@@ -10,14 +10,9 @@ class Lista {
 
 window.onload = function () {
     //Selections
-    let firstList = new Lista(
-        "Fiska",
-        "Laga mat",
-        "Tvätta",
-        "Borsta tänderna",
-        "Gå promenad"
-    );
     let makeListButton = document.createElement("button");
+    makeListButton.type = "button";
+    makeListButton.style.cursor = "pointer";
     makeListButton.className = "create-list-button";
     makeListButton.innerHTML = "Create List";
     let myForm = document.querySelector("form");
@@ -27,4 +22,59 @@ window.onload = function () {
     myForm.appendChild(makeListButton);
 };
 //Functions
-function makeMyListFunction() {}
+function makeMyListFunction() {
+    let myList = new Lista(
+        "Fiska",
+        "Laga mat",
+        "Tvätta",
+        "Borsta tänderna",
+        "Gå promenad"
+    );
+    let myArray = [
+        myList.todo1,
+        myList.todo2,
+        myList.todo3,
+        myList.todo4,
+        myList.todo5,
+    ];
+
+    for (let i = 0; i < myArray.length; i++) {
+        let objektDiv = document.createElement("div");
+        let objektP = document.createElement("p");
+        let todoContainer = document.querySelector(".todo-container");
+        let buttonContainer = document.createElement("div");
+        let submitButton = document.createElement("button");
+        let submitIcon = document.createElement("i");
+        let deleteButton = document.createElement("button");
+        let deleteIcon = document.createElement("i");
+
+        submitButton.addEventListener("click", submitListFunction);
+        submitButton.style.cursor = "pointer";
+        deleteButton.addEventListener("click", deleteListFunction);
+        deleteButton.style.cursor = "pointer";
+        objektDiv.className = "output-box";
+        objektP.innerHTML = myArray[i];
+        buttonContainer.className = "button-box";
+        submitButton.type = "button";
+        submitButton.className = "submit-output-button";
+        submitIcon.className = "fas fa-check-square";
+        deleteButton.type = "button";
+        deleteButton.className = "delete-output-button";
+        deleteIcon.className = "fas fa-trash-alt";
+
+        todoContainer.appendChild(objektDiv);
+        objektDiv.appendChild(objektP);
+        todoContainer.appendChild(buttonContainer);
+        objektDiv.appendChild(buttonContainer);
+        buttonContainer.appendChild(submitButton);
+        submitButton.appendChild(submitIcon);
+        buttonContainer.appendChild(deleteButton);
+        deleteButton.appendChild(deleteIcon);
+    }
+}
+function submitListFunction() {
+    console.log("submit");
+}
+function deleteListFunction() {
+    console.log("delete");
+}
