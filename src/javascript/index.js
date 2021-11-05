@@ -86,10 +86,4 @@ function makeMyListFunction() {
         buttonContainer.appendChild(deleteButton);
         deleteButton.appendChild(deleteIcon);
     }
-    function submitListFunction() {
-        console.log("submit");
-    }
-    function deleteListFunction() {
-        console.log("delete");
-    }
 }
