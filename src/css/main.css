@@ -119,3 +119,22 @@ body main .todo-container .button-box .delete-output-button i {
   font-size: 2.2rem;
   color: black;
 }
+body main .submit-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  flex-direction: column;
+}
+body main .submit-container .output-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  width: 70%;
+  height: 40px;
+  border: 1px solid black;
+  font-size: 1.2rem;
+  text-decoration: line-through;
+}
