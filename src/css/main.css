@@ -138,3 +138,26 @@ body main .submit-container .output-box {
   font-size: 1.2rem;
   text-decoration: line-through;
 }
+body main .return-container {
+  width: 30%;
+}
+body main .return-container .return-button {
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(white, #ff8a3b);
+  border: 1px solid black;
+}
+body main .return-container .return-button i {
+  font-size: 2.2rem;
+  color: green;
+}
+body main .return-container .delete-button {
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(white, #ff8a3b);
+  border: 1px solid black;
+}
+body main .return-container .delete-button i {
+  font-size: 2.2rem;
+  color: black;
+}
