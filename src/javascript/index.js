@@ -55,6 +55,7 @@ function makeMyListFunction() {
         submitContainer.appendChild(objekt);
         objekt.appendChild(p);
         submitContainer.appendChild(returnContainer);
+        objekt.appendChild(returnContainer);
         returnContainer.appendChild(returnButton);
         returnButton.appendChild(returnIcon);
         objekt.removeChild(buttoncontainer);
