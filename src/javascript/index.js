@@ -1,10 +1,9 @@
 class Lista {
-    constructor(Todo1, Todo2, Todo3, Todo4, Todo5) {
-        this.todo1 = Todo1;
-        this.todo2 = Todo2;
-        this.todo3 = Todo3;
-        this.todo4 = Todo4;
-        this.todo5 = Todo5;
+    constructor(name, visible, letter, completed) {
+        this.listName = name;
+        this.listVisible = visible;
+        this.listLetter = letter;
+        this.listCompleted = completed;
     }
 }
 
@@ -23,20 +22,26 @@ window.onload = function () {
 };
 //Functions
 function makeMyListFunction() {
-    let myList = new Lista(
-        "Fiska",
-        "Laga mat",
-        "Tvätta",
-        "Borsta tänderna",
-        "Gå promenad"
-    );
+    // let myList = new Lista(
+    //     "Fiska",
+    //     "Laga mat",
+    //     "Tvätta",
+    //     "Borsta tänderna",
+    //     "Gå promenad"
+    // );
+
+    let firstObjekt = new Lista("Fiska", "true", "f", "false");
+    let secondObjekt = new Lista("Laga mat", "true", "l", "false");
+    let thirdObjekt = new Lista("Tvätta", "true", "t", "false");
+    let fourthObjekt = new Lista("Borsta tänderna", "true", "b", "false");
+    let fifthObjekt = new Lista("Gå promenad", "true", "f", "false");
 
     let myArray = [
-        myList.todo1,
-        myList.todo2,
-        myList.todo3,
-        myList.todo4,
-        myList.todo5,
+        firstObjekt,
+        secondObjekt,
+        thirdObjekt,
+        fourthObjekt,
+        fifthObjekt,
     ];
 
     function remove(position) {
