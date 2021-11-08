@@ -37,14 +37,26 @@ function makeMyListFunction() {
     function remove(position, container, objekt) {
         container.removeChild(objekt);
         myArray.splice(position.length, 1);
+        console.log(myArray);
     }
     function submit(position, container, objekt, p, buttoncontainer) {
         let submitContainer = document.querySelector(".submit-container");
         let myMain = document.querySelector("main");
+        let returnContainer = document.createElement("div");
+        let returnButton = document.createElement("button");
+        let returnIcon = document.createElement("i");
+
+        returnIcon.style.cursor = "pointer";
+        returnIcon.className = "fas fa-undo";
+        returnIcon.type = "button";
+        returnContainer.className = "return-container";
 
         myMain.appendChild(submitContainer);
         submitContainer.appendChild(objekt);
         objekt.appendChild(p);
+        submitContainer.appendChild(returnContainer);
+        returnContainer.appendChild(returnButton);
+        returnButton.appendChild(returnIcon);
         objekt.removeChild(buttoncontainer);
         myArray.splice(position.length, 1);
 
