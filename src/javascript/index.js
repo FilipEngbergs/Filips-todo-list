@@ -1,9 +1,7 @@
 class Lista {
-    constructor(name, visible, letter, completed) {
+    constructor(name, letter) {
         this.listName = name;
-        this.listVisible = visible;
         this.listLetter = letter;
-        this.listCompleted = completed;
     }
 }
 
@@ -22,34 +20,23 @@ window.onload = function () {
 };
 //Functions
 function makeMyListFunction() {
-    // let myList = new Lista(
-    //     "Fiska",
-    //     "Laga mat",
-    //     "Tvätta",
-    //     "Borsta tänderna",
-    //     "Gå promenad"
-    // );
-
-    let firstObjekt = new Lista("Fiska", "true", "f", "false");
-    let secondObjekt = new Lista("Laga mat", "true", "l", "false");
-    let thirdObjekt = new Lista("Tvätta", "true", "t", "false");
-    let fourthObjekt = new Lista("Borsta tänderna", "true", "b", "false");
-    let fifthObjekt = new Lista("Gå promenad", "true", "f", "false");
+    let firstObject = new Lista("Fiska", "f");
+    let secondObject = new Lista("Laga mat", "l");
+    let thirdObject = new Lista("Tvätta", "t");
+    let fourthObject = new Lista("Borsta tänderna", "b");
+    let fifthObject = new Lista("Gå promenad", "f");
 
     let myArray = [
-        firstObjekt,
-        secondObjekt,
-        thirdObjekt,
-        fourthObjekt,
-        fifthObjekt,
+        firstObject,
+        secondObject,
+        thirdObject,
+        fourthObject,
+        fifthObject,
     ];
 
-    function remove(position) {
-        console.log(position);
-        document
-            .querySelectorAll(`.output-box:nth-of-type(${position + 1})`)
-            .forEach((x) => x.remove());
-        myArray.splice(position, 1);
+    function remove(position, container, objekt) {
+        container.removeChild(objekt);
+        myArray.splice(position.length, 1);
     }
     function submit(position) {}
 
@@ -68,12 +55,12 @@ function makeMyListFunction() {
         });
 
         deleteButton.addEventListener("click", () => {
-            remove(i);
+            remove(i, todoContainer, objektDiv);
         });
 
         deleteButton.style.cursor = "pointer";
         objektDiv.className = "output-box";
-        objektP.innerHTML = myArray[i];
+        objektP.innerHTML = myArray[i].listName;
         buttonContainer.className = "button-box";
         submitButton.type = "button";
         submitButton.className = "submit-output-button";
