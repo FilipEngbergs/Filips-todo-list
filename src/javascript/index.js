@@ -45,8 +45,14 @@ function makeMyListFunction() {
         let returnContainer = document.createElement("div");
         let returnButton = document.createElement("button");
         let returnIcon = document.createElement("i");
+        let deleteButton = document.createElement("button");
+        let deleteIcon = document.createElement("i");
 
-        returnIcon.style.cursor = "pointer";
+        deleteButton.style.cursor = "pointer";
+        returnButton.style.cursor = "pointer";
+        deleteButton.type = "button";
+        deleteButton.className = "delete-button";
+        deleteIcon.className = "fas fa-trash-alt";
         returnIcon.className = "fas fa-undo";
         returnIcon.type = "button";
         returnContainer.className = "return-container";
@@ -58,6 +64,8 @@ function makeMyListFunction() {
         objekt.appendChild(returnContainer);
         returnContainer.appendChild(returnButton);
         returnButton.appendChild(returnIcon);
+        returnContainer.appendChild(deleteButton);
+        deleteButton.appendChild(deleteIcon);
         objekt.removeChild(buttoncontainer);
         myArray.splice(position.length, 1);
 
