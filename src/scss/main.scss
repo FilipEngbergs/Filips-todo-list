@@ -125,5 +125,24 @@ body {
                 }
             }
         }
+        .submit-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            gap: 10px;
+            flex-direction: column;
+            .output-box {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                background: variables.$white-color;
+                width: 70%;
+                height: 40px;
+                border: 1px solid black;
+                font-size: 1.2rem;
+                text-decoration: line-through;
+            }
+        }
     }
 }
