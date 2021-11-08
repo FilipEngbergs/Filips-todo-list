@@ -97,7 +97,9 @@ body main .todo-container .output-box {
   font-size: 1.2rem;
 }
 body main .todo-container .button-box {
+  display: flex;
   width: 30%;
+  height: 100%;
 }
 body main .todo-container .button-box .submit-output-button {
   width: 50%;
@@ -106,7 +108,7 @@ body main .todo-container .button-box .submit-output-button {
   border: 1px solid black;
 }
 body main .todo-container .button-box .submit-output-button i {
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   color: green;
 }
 body main .todo-container .button-box .delete-output-button {
@@ -116,7 +118,7 @@ body main .todo-container .button-box .delete-output-button {
   border: 1px solid black;
 }
 body main .todo-container .button-box .delete-output-button i {
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   color: black;
 }
 body main .submit-container {
@@ -140,6 +142,7 @@ body main .submit-container .output-box {
 }
 body main .return-container {
   width: 30%;
+  height: 100%;
 }
 body main .return-container .return-button {
   width: 50%;
@@ -148,7 +151,7 @@ body main .return-container .return-button {
   border: 1px solid black;
 }
 body main .return-container .return-button i {
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   color: green;
 }
 body main .return-container .delete-button {
@@ -158,6 +161,6 @@ body main .return-container .delete-button {
   border: 1px solid black;
 }
 body main .return-container .delete-button i {
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   color: black;
 }
