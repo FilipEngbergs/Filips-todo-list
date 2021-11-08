@@ -6,7 +6,7 @@
 
 body {
   font-size: 12pt;
-  background: linear-gradient(120deg, #ffce99, #ffe6cc);
+  background: linear-gradient(120deg, #0d3e66, #929292);
   background-repeat: no-repeat;
 }
 body header {
@@ -14,7 +14,7 @@ body header {
   justify-content: center;
   align-items: center;
   height: 200px;
-  color: rgba(255, 159, 57, 0.858);
+  color: rgba(185, 182, 142, 0.858);
   font-size: 1.2rem;
   font-family: "Russo One", sans-serif;
 }
@@ -62,7 +62,7 @@ body main form .todo-input {
 }
 body main form .submit-input-button {
   width: 20%;
-  background: radial-gradient(white, #ff8a3b);
+  background: radial-gradient(white, #9e9b6f);
   border: 1px solid black;
 }
 @media screen and (min-width: 992px) {
@@ -72,11 +72,11 @@ body main form .submit-input-button {
 }
 body main form .submit-input-button i {
   font-size: 2rem;
-  color: #ff9f39;
+  color: black;
 }
 body main form .create-list-button {
   width: 10%;
-  background: radial-gradient(white, #ff8a3b);
+  background: radial-gradient(white, #9e9b6f);
 }
 body main .todo-container {
   display: flex;
@@ -102,7 +102,7 @@ body main .todo-container .button-box {
 body main .todo-container .button-box .submit-output-button {
   width: 50%;
   height: 100%;
-  background: radial-gradient(white, #ff8a3b);
+  background: radial-gradient(white, #9e9b6f);
   border: 1px solid black;
 }
 body main .todo-container .button-box .submit-output-button i {
@@ -112,7 +112,7 @@ body main .todo-container .button-box .submit-output-button i {
 body main .todo-container .button-box .delete-output-button {
   width: 50%;
   height: 100%;
-  background: radial-gradient(white, #ff8a3b);
+  background: radial-gradient(white, #9e9b6f);
   border: 1px solid black;
 }
 body main .todo-container .button-box .delete-output-button i {
@@ -144,7 +144,7 @@ body main .return-container {
 body main .return-container .return-button {
   width: 50%;
   height: 100%;
-  background: radial-gradient(white, #ff8a3b);
+  background: radial-gradient(white, #9e9b6f);
   border: 1px solid black;
 }
 body main .return-container .return-button i {
@@ -154,7 +154,7 @@ body main .return-container .return-button i {
 body main .return-container .delete-button {
   width: 50%;
   height: 100%;
-  background: radial-gradient(white, #ff8a3b);
+  background: radial-gradient(white, #9e9b6f);
   border: 1px solid black;
 }
 body main .return-container .delete-button i {
