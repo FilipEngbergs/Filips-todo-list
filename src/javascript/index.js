@@ -38,7 +38,18 @@ function makeMyListFunction() {
         container.removeChild(objekt);
         myArray.splice(position.length, 1);
     }
-    function submit(position) {}
+    function submit(position, container, objekt, p, buttoncontainer) {
+        let submitContainer = document.querySelector(".submit-container");
+        let myMain = document.querySelector("main");
+
+        myMain.appendChild(submitContainer);
+        submitContainer.appendChild(objekt);
+        objekt.appendChild(p);
+        objekt.removeChild(buttoncontainer);
+        myArray.splice(position.length, 1);
+
+        console.log(myArray);
+    }
 
     for (let i = 0; i < myArray.length; i++) {
         let objektDiv = document.createElement("div");
@@ -51,7 +62,7 @@ function makeMyListFunction() {
         let deleteIcon = document.createElement("i");
 
         submitButton.addEventListener("click", () => {
-            submit(i);
+            submit(i, todoContainer, objektDiv, objektP, buttonContainer);
         });
 
         deleteButton.addEventListener("click", () => {
@@ -59,6 +70,7 @@ function makeMyListFunction() {
         });
 
         deleteButton.style.cursor = "pointer";
+        submitButton.style.cursor = "pointer";
         objektDiv.className = "output-box";
         objektP.innerHTML = myArray[i].listName;
         buttonContainer.className = "button-box";
