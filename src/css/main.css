@@ -50,7 +50,7 @@ body main form {
   width: 100%;
 }
 body main form .todo-input {
-  width: 70%;
+  width: 50%;
   height: 40px;
   border: 1px solid black;
   font-size: 1.2rem;
@@ -61,7 +61,7 @@ body main form .todo-input {
   }
 }
 body main form .submit-input-button {
-  width: 20%;
+  width: 15%;
   background: radial-gradient(white, #9e9b6f);
   border: 1px solid black;
 }
@@ -75,7 +75,7 @@ body main form .submit-input-button i {
   color: black;
 }
 body main form .create-list-button {
-  width: 10%;
+  width: 15%;
   background: radial-gradient(white, #9e9b6f);
 }
 body main .todo-container {

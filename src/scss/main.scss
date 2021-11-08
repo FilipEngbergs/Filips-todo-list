@@ -47,7 +47,7 @@ body {
             justify-content: center;
             width: 100%;
             .todo-input {
-                width: 70%;
+                width: 50%;
                 height: 40px;
                 border: 1px solid black;
                 font-size: 1.2rem;
@@ -56,7 +56,7 @@ body {
                 }
             }
             .submit-input-button {
-                width: 20%;
+                width: 15%;
                 background: radial-gradient(
                     variables.$white-color,
                     variables.$fourth-color
@@ -71,7 +71,7 @@ body {
                 }
             }
             .create-list-button {
-                width: 10%;
+                width: 15%;
                 background: radial-gradient(
                     variables.$white-color,
                     variables.$fourth-color
