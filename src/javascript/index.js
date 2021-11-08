@@ -50,6 +50,7 @@ function makeMyListFunction() {
 
         deleteButton.style.cursor = "pointer";
         returnButton.style.cursor = "pointer";
+        returnButton.className = "return-button";
         deleteButton.type = "button";
         deleteButton.className = "delete-button";
         deleteIcon.className = "fas fa-trash-alt";
