@@ -1,10 +1,7 @@
 class Lista {
-    constructor(Todo1, Todo2, Todo3, Todo4, Todo5) {
-        this.todo1 = Todo1;
-        this.todo2 = Todo2;
-        this.todo3 = Todo3;
-        this.todo4 = Todo4;
-        this.todo5 = Todo5;
+    constructor(name, letter) {
+        this.listName = name;
+        this.listLetter = letter;
     }
 }
 
@@ -23,28 +20,23 @@ window.onload = function () {
 };
 //Functions
 function makeMyListFunction() {
-    let myList = new Lista(
-        "Fiska",
-        "Laga mat",
-        "Tvätta",
-        "Borsta tänderna",
-        "Gå promenad"
-    );
+    let firstObject = new Lista("Fiska", "f");
+    let secondObject = new Lista("Laga mat", "l");
+    let thirdObject = new Lista("Tvätta", "t");
+    let fourthObject = new Lista("Borsta tänderna", "b");
+    let fifthObject = new Lista("Gå promenad", "f");
 
     let myArray = [
-        myList.todo1,
-        myList.todo2,
-        myList.todo3,
-        myList.todo4,
-        myList.todo5,
+        firstObject,
+        secondObject,
+        thirdObject,
+        fourthObject,
+        fifthObject,
     ];
 
-    function remove(position) {
-        console.log(position);
-        document
-            .querySelectorAll(`.output-box:nth-of-type(${position + 1})`)
-            .forEach((x) => x.remove());
-        myArray.splice(position, 1);
+    function remove(position, container, objekt) {
+        container.removeChild(objekt);
+        myArray.splice(position.length, 1);
     }
     function submit(position) {}
 
@@ -63,12 +55,12 @@ function makeMyListFunction() {
         });
 
         deleteButton.addEventListener("click", () => {
-            remove(i);
+            remove(i, todoContainer, objektDiv);
         });
 
         deleteButton.style.cursor = "pointer";
         objektDiv.className = "output-box";
-        objektP.innerHTML = myArray[i];
+        objektP.innerHTML = myArray[i].listName;
         buttonContainer.className = "button-box";
         submitButton.type = "button";
         submitButton.className = "submit-output-button";
@@ -85,11 +77,5 @@ function makeMyListFunction() {
         submitButton.appendChild(submitIcon);
         buttonContainer.appendChild(deleteButton);
         deleteButton.appendChild(deleteIcon);
-    }
-    function submitListFunction() {
-        console.log("submit");
-    }
-    function deleteListFunction() {
-        console.log("delete");
     }
 }
