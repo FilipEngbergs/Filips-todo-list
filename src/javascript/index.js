@@ -1,7 +1,6 @@
 class Lista {
-    constructor(name, letter) {
+    constructor(name) {
         this.listName = name;
-        this.listLetter = letter;
     }
 }
 
@@ -20,11 +19,11 @@ window.onload = function () {
 };
 //Functions
 function makeMyListFunction() {
-    let firstObject = new Lista("Fiska", "f");
-    let secondObject = new Lista("Laga mat", "l");
-    let thirdObject = new Lista("Tvätta", "t");
-    let fourthObject = new Lista("Borsta tänderna", "b");
-    let fifthObject = new Lista("Gå promenad", "f");
+    let firstObject = new Lista("Fiska");
+    let secondObject = new Lista("Laga mat");
+    let thirdObject = new Lista("Tvätta");
+    let fourthObject = new Lista("Borsta tänderna");
+    let fifthObject = new Lista("Gå promenad");
 
     let myArray = [
         firstObject,
@@ -33,6 +32,24 @@ function makeMyListFunction() {
         fourthObject,
         fifthObject,
     ];
+    function garbage(objekt, container) {
+        container.removeChild(objekt);
+    }
+
+    function undone(
+        position,
+        objekt,
+        container,
+        buttonContainer,
+        returnContainer
+    ) {
+        container.appendChild(objekt);
+        container.appendChild(buttonContainer);
+        objekt.removeChild(returnContainer);
+
+        myArray.splice(position.length, 1);
+        console.log(myArray);
+    }
 
     function remove(position, container, objekt) {
         container.removeChild(objekt);
@@ -47,6 +64,20 @@ function makeMyListFunction() {
         let returnIcon = document.createElement("i");
         let deleteButton = document.createElement("button");
         let deleteIcon = document.createElement("i");
+
+        returnButton.addEventListener("click", () => {
+            undone(
+                position,
+                objekt,
+                container,
+                buttoncontainer,
+                returnContainer
+            );
+        });
+
+        deleteButton.addEventListener("click", () => {
+            garbage(objekt, submitContainer);
+        });
 
         deleteButton.style.cursor = "pointer";
         returnButton.style.cursor = "pointer";
@@ -68,7 +99,6 @@ function makeMyListFunction() {
         returnContainer.appendChild(deleteButton);
         deleteButton.appendChild(deleteIcon);
         objekt.removeChild(buttoncontainer);
-        myArray.splice(position.length, 1);
 
         console.log(myArray);
     }
