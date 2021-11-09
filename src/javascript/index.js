@@ -45,6 +45,8 @@ function makeMyListFunction() {
     ) {
         container.appendChild(objekt);
         container.appendChild(buttonContainer);
+        objekt.appendChild(buttonContainer);
+
         objekt.removeChild(returnContainer);
 
         myArray.splice(position.length, 1);
