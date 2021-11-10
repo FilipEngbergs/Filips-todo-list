@@ -186,6 +186,7 @@ function makeMyInputFunction() {
             deleteTask(listArr, todoContainer, objektDiv);
         });
 
+        buttonContainer.style.justifyContent = "flex-end";
         objektDiv.className = "output-box";
         objektDiv.innerHTML = newPTag;
         buttonContainer.className = "button-box";
