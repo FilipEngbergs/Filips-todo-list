@@ -7,15 +7,18 @@ class Lista {
 window.onload = function () {
     //Selections
     let makeListButton = document.createElement("button");
+    let myForm = document.querySelector("form");
+
     makeListButton.type = "button";
     makeListButton.style.cursor = "pointer";
     makeListButton.className = "create-list-button";
     makeListButton.innerHTML = "Create List";
-    let myForm = document.querySelector("form");
     //EventListener
     makeListButton.addEventListener("click", makeMyListFunction);
     //Appendchild
     myForm.appendChild(makeListButton);
+
+    makeMyInputFunction();
 };
 //Functions
 function makeMyListFunction() {
@@ -46,9 +49,7 @@ function makeMyListFunction() {
         container.appendChild(objekt);
         container.appendChild(buttonContainer);
         objekt.appendChild(buttonContainer);
-
         objekt.removeChild(returnContainer);
-
         myArray.splice(position.length, 1);
         console.log(myArray);
     }
@@ -143,5 +144,68 @@ function makeMyListFunction() {
         submitButton.appendChild(submitIcon);
         buttonContainer.appendChild(deleteButton);
         deleteButton.appendChild(deleteIcon);
+    }
+}
+function makeMyInputFunction() {
+    let inputText = document.querySelector(".todo-input");
+    let inputButton = document.querySelector(".submit-input-button");
+
+    inputButton.style.cursor = "pointer";
+
+    inputButton.onclick = () => {
+        let userData = inputText.value;
+        let getLocalStorage = localStorage.getItem("New Todo");
+        if (getLocalStorage == null) {
+            listArr = [];
+        } else {
+            listArr = JSON.parse(getLocalStorage);
+        }
+        listArr.push(userData);
+        localStorage.setItem("New Todo", JSON.stringify(listArr));
+        showTasks();
+    };
+    function showTasks() {
+        let getLocalStorage = localStorage.getItem("New Todo");
+        if (getLocalStorage == null) {
+            listArr = [];
+        } else {
+            listArr = JSON.parse(getLocalStorage);
+        }
+        let newPTag = "";
+        listArr.forEach((element) => {
+            newPTag = `<p>${element}</p>`;
+        });
+
+        let objektDiv = document.createElement("div");
+        let todoContainer = document.querySelector(".todo-container");
+        let buttonContainer = document.createElement("div");
+        let deleteButton = document.createElement("button");
+        let deleteIcon = document.createElement("i");
+
+        deleteButton.addEventListener("click", () => {
+            deleteTask(listArr, todoContainer, objektDiv);
+        });
+
+        objektDiv.className = "output-box";
+        objektDiv.innerHTML = newPTag;
+        buttonContainer.className = "button-box";
+        deleteButton.type = "button";
+        deleteButton.className = "delete-output-button";
+        deleteIcon.className = "fas fa-trash-alt";
+
+        todoContainer.appendChild(objektDiv);
+        todoContainer.appendChild(buttonContainer);
+        objektDiv.appendChild(buttonContainer);
+        buttonContainer.appendChild(deleteButton);
+        deleteButton.appendChild(deleteIcon);
+
+        inputText.value = "";
+    }
+    function deleteTask(index, container, objekt) {
+        let getLocalStorage = localStorage.getItem("New Todo");
+        listArr = JSON.parse(getLocalStorage);
+        listArr.splice(index, 1);
+        localStorage.setItem("New Todo", JSON.stringify(listArr));
+        container.removeChild(objekt);
     }
 }
